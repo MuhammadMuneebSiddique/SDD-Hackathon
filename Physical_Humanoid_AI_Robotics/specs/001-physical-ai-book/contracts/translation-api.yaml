@@ -1,0 +1,65 @@
+# API Contract: Translation Service
+
+## Overview
+The translation service provides real-time translation of book content to Urdu while maintaining technical accuracy. The service is designed to translate chapter content instantly as required by the feature specification.
+
+## Base URL
+`/api/translation`
+
+## Endpoints
+
+### POST /api/translation/to-urdu
+Translate content to Urdu while preserving technical terminology.
+
+**Request**:
+```json
+{
+  "content": "string (required)",
+  "preserveTechnicalTerms": "boolean (optional, default: true)",
+  "context": "string (optional, for better translation accuracy)"
+}
+```
+
+**Response**:
+```json
+{
+  "translatedContent": "string",
+  "originalContentLength": "integer",
+  "translatedContentLength": "integer",
+  "processingTime": "number (ms)"
+}
+```
+
+**Headers**:
+- Content-Type: application/json
+
+**Status Codes**:
+- 200: Success
+- 400: Invalid request format
+- 500: Translation service error
+
+### GET /api/translation/supported-languages
+Get list of supported translation languages.
+
+**Response**:
+```json
+{
+  "languages": [
+    {
+      "code": "string (e.g., 'ur')",
+      "name": "string (e.g., 'Urdu')",
+      "supported": "boolean"
+    }
+  ]
+}
+```
+
+## Performance Requirements
+- Translation should complete within 10 seconds for standard chapter length
+- Maintain 95% accuracy for technical terminology
+- Preserve code blocks and formatting during translation
+
+## Security
+- No user data is stored during translation process
+- All processing happens in real-time
+- Translation service does not retain any content after processing

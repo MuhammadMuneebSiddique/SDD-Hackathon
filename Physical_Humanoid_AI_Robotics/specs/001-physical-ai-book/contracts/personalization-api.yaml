@@ -1,0 +1,82 @@
+# API Contract: Personalization Service
+
+## Overview
+The personalization service provides content adaptation based on user's software and hardware background. It allows users to receive personalized content recommendations and difficulty adjustments.
+
+## Base URL
+`/api/personalization`
+
+## Endpoints
+
+### GET /api/personalization/profile
+Retrieve the current user's profile information used for personalization.
+
+**Response**:
+```json
+{
+  "userId": "string",
+  "softwareBackground": "string",
+  "hardwareBackground": "string",
+  "preferences": {
+    "difficultyLevel": "beginner|intermediate|advanced",
+    "preferredExamples": "software|hardware|both"
+  }
+}
+```
+
+**Status Codes**:
+- 200: Success
+- 401: User not authenticated
+- 404: User profile not found
+
+### PUT /api/personalization/profile
+Update the user's profile information for personalization.
+
+**Request**:
+```json
+{
+  "softwareBackground": "string",
+  "hardwareBackground": "string",
+  "preferences": {
+    "difficultyLevel": "beginner|intermediate|advanced",
+    "preferredExamples": "software|hardware|both"
+  }
+}
+```
+
+**Response**:
+```json
+{
+  "success": "boolean",
+  "message": "string"
+}
+```
+
+### POST /api/personalization/content
+Get personalized version of content based on user profile.
+
+**Request**:
+```json
+{
+  "contentId": "string (required)",
+  "userId": "string (optional)"
+}
+```
+
+**Response**:
+```json
+{
+  "contentId": "string",
+  "personalizedContent": "string (markdown/MDX)",
+  "adjustments": {
+    "complexity": "string",
+    "examplesAdded": ["string"],
+    "additionalResources": ["string"]
+  }
+}
+```
+
+## Security
+- Profile updates require authentication
+- Content personalization works for both authenticated and anonymous users
+- User background information is stored securely

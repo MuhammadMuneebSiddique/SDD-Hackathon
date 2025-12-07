@@ -1,0 +1,65 @@
+# API Contract: RAG Chatbot Service
+
+## Overview
+The RAG (Retrieval-Augmented Generation) chatbot service provides AI-powered question answering based strictly on book content. The service processes user questions in real-time without storing them, ensuring privacy as specified in the feature requirements.
+
+## Base URL
+`/api/chatbot`
+
+## Endpoints
+
+### POST /api/chatbot/query
+Submit a question about book content and receive an AI-generated response based only on book material.
+
+**Request**:
+```json
+{
+  "question": "string (required)",
+  "selectedText": "string (optional)",
+  "sessionId": "string (optional, for context)"
+}
+```
+
+**Response**:
+```json
+{
+  "answer": "string",
+  "sources": ["string"],
+  "timestamp": "ISO 8601 datetime"
+}
+```
+
+**Headers**:
+- Content-Type: application/json
+
+**Status Codes**:
+- 200: Success
+- 400: Invalid request format
+- 500: Processing error
+
+### POST /api/chatbot/query-selected
+Submit a question about specific selected text and receive a response based only on that text and related book sections.
+
+**Request**:
+```json
+{
+  "question": "string (required)",
+  "selectedText": "string (required)",
+  "context": "string (optional)"
+}
+```
+
+**Response**:
+```json
+{
+  "answer": "string",
+  "relevantSections": ["string"],
+  "timestamp": "ISO 8601 datetime"
+}
+```
+
+## Security & Privacy
+- No user questions are stored permanently
+- Session IDs are temporary and expire after inactivity
+- All processing happens in real-time
+- Responses are limited to book content only

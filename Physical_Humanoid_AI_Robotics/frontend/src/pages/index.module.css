@@ -1,0 +1,252 @@
+/**
+ * CSS files with the .module.css suffix will be treated as CSS modules
+ * and scoped locally.
+ */
+
+.heroBanner {
+  padding: 3rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #1a365d, #2d3748);
+  color: white;
+}
+
+@media screen and (max-width: 996px) {
+  .heroBanner {
+    padding: 2rem 0;
+  }
+}
+
+.heroContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.heroText {
+  flex: 1;
+  min-width: 300px;
+  text-align: left;
+  padding-right: 2rem;
+}
+
+@media screen and (max-width: 996px) {
+  .heroText {
+    padding-right: 0;
+    margin-bottom: 2rem;
+  }
+}
+
+.heroTitle {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+@media screen and (max-width: 768px) {
+  .heroTitle {
+    font-size: 2rem;
+  }
+}
+
+.heroSubtitle {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  opacity: 0.9;
+  line-height: 1.5;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+@media screen and (max-width: 996px) {
+  .buttons {
+    justify-content: center;
+  }
+}
+
+.heroBookVisual {
+  flex: 0 0 auto;
+  width: 180px;
+  height: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1000px;
+}
+
+.bookIcon {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #4fd1c5;
+  filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.3));
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.section {
+  background: rgba(255, 255, 255, 0.95);
+  color: #2d3748;
+  border-radius: 12px;
+  padding: 2.5rem 2rem;
+  margin-top: 2rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.sectionTitle {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #1a365d;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.sectionText {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: #4a5568;
+}
+
+.sectionSubTitle {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #2d3748;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.benefits {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.2rem;
+  margin-bottom: 2.5rem;
+}
+
+.benefitItem {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  background: #f7fafc;
+  border-radius: 8px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.benefitItem:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.benefitEmoji {
+  font-size: 1.5rem;
+  margin-right: 0.8rem;
+  flex-shrink: 0;
+}
+
+.benefitText {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #2d3748;
+}
+
+.finalCTA {
+  background: linear-gradient(135deg, #4c51bf, #667eea) !important;
+  color: white;
+  padding: 3rem 2rem;
+  border-radius: 16px;
+  margin-top: 3rem;
+  border: 3px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  text-align: center;
+}
+
+.finalCTA::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #00c6ff, #0072ff);
+}
+
+.ctaTitle {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.ctaText {
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
+  opacity: 0.9;
+  font-weight: 500;
+}
+
+@media screen and (max-width: 996px) {
+  .heroContent {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .section {
+    padding: 1.5rem 1rem;
+  }
+
+  .benefits {
+    grid-template-columns: 1fr;
+  }
+
+  .ctaTitle {
+    font-size: 1.7rem;
+  }
+
+  .ctaText {
+    font-size: 1.1rem;
+  }
+}
+
+.button--secondary {
+  background: white !important;
+  color: #2d3748 !important;
+  font-weight: bold !important;
+  padding: 0.8rem 2rem !important;
+  border-radius: 8px !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+}
+
+.button--secondary:hover {
+  transform: translateY(-3px) !important;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2) !important;
+}
