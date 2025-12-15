@@ -1,5 +1,4 @@
 [build]
-builder = "python"
 buildCommand = "pip install uv && cd Physical_Humanoid_AI_Robotics/backend && uv sync"
 
 [deploy]
