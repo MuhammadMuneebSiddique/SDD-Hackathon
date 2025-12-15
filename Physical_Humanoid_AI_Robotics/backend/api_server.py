@@ -2,9 +2,12 @@ from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from typing import List, Optional
-import uuid
+import uuid, os
 from agent import run_agent
+from dotenv import load_dotenv
 
+
+load_dotenv()
 
 app = FastAPI(title="RAG Chatbot API", version="1.0.0")
 
@@ -58,4 +61,4 @@ def chat_endpoint(request: ChatRequest):
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    uvicorn.run(app, host="0.0.0.0", port=os.getenv("PORT"))
