@@ -28,7 +28,7 @@
    npm run build
    ```
 
-## Content Creation Workflow
+## Content Structure (COMPLETED)
 
 1. **Module Structure**
    - Content is organized in `frontend/docs/` by modules:
@@ -37,38 +37,28 @@
      - `module-3-isaac/` - NVIDIA Isaac: The AI-Robot Brain
      - `module-4-vla/` - VLA: Vision-Language-Action
      - `capstone/` - Capstone Project
+     - `resources/` - Hardware guides and lab instructions
 
-2. **Creating New Content**
-   - Add new markdown files to appropriate module directory
-   - Follow the standard frontmatter structure:
-   ```markdown
-   ---
-   title: Your Title
-   sidebar_position: [position number]
-   description: Brief description
-   ---
-   ```
+2. **Content Organization**
+   - All 13-week course content has been created across the 4 core modules
+   - Each module includes theory, practical labs, and hardware guides
+   - Capstone project integrates all concepts from the course
 
-3. **Adding Interactive Elements**
-   - Use Docusaurus components for:
-     - Code blocks with syntax highlighting
-     - Mermaid diagrams for visualizations
-     - Tabs for different approaches
-     - Callout blocks for important information
+## Interactive Features (PENDING)
 
-## Agent-Based Content Generation
+1. **RAG Chatbot Implementation**
+   - Integration of OpenAI APIs with FastAPI backend
+   - Qdrant vector database for content-restricted responses
+   - Real-time processing without data storage
 
-1. **Research Phase**
-   - Use Research & Knowledge Expert agent to create accurate outlines
-   - Ensure technical correctness for ROS 2, Gazebo, Isaac, VLA concepts
+2. **Personalization Features**
+   - User registration with software/hardware background questions
+   - Content adjustment based on user profile
+   - Better-Auth integration
 
-2. **Writing Phase**
-   - Use Technical Documentation Writer agent to convert outlines to markdown
-   - Include code examples, labs, and hardware guides
-
-3. **Validation Phase**
-   - Use Quality Validator agent to check correctness and reproducibility
-   - Verify all labs are step-by-step reproducible
+3. **Translation Features**
+   - Urdu translation capability for chapter content
+   - Language preference persistence
 
 ## Deployment
 

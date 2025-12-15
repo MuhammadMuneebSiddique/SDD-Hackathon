@@ -2,7 +2,7 @@
 
 **Feature Branch**: `001-physical-ai-book`
 **Created**: 2025-12-07
-**Status**: Draft
+**Status**: In Progress (Book Creation Completed, Features Pending)
 **Input**: User description: "Create a complete Docusaurus book that teaches a 13-week capstone course on Physical AI & Humanoid Robotics, covering ROS 2 → Simulation → Isaac → VLA → Autonomous Humanoid. Content is created through Claude + SpecKit Plus, using Sub-Agents and Skills with strict task separation."
 
 ## User Scenarios & Testing *(mandatory)*
