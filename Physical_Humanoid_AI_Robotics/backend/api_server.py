@@ -11,14 +11,14 @@ load_dotenv()
 
 app = FastAPI(title="RAG Chatbot API", version="1.0.0")
 
-origin = [
-    "http://localhost:3000"
+origins = [
+    "https://sdd-hackathon-emsr.vercel.app"
 ]
 
 # Add CORS middleware
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # In production, replace with specific origins
+    allow_origins=origins,  # In production, replace with specific origins
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
