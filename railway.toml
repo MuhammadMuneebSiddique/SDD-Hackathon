@@ -1,5 +1,5 @@
 [build]
-buildCommand = "pip install uv && cd Physical_Humanoid_AI_Robotics/backend && uv sync"
+buildCommand = "cd Physical_Humanoid_AI_Robotics/backend && uv sync"
 
 [deploy]
 startCommand = "cd Physical_Humanoid_AI_Robotics/backend && uv run api_server.py"
